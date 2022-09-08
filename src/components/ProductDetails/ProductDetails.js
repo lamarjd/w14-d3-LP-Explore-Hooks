@@ -13,18 +13,22 @@ function ProductDetails({ product, visible }) {
 
   return (
     <div className="product-details">
+      {/* <ProductDetails selectedProduct={product} /> */}
       <p className="product-info">{product.name}</p>
       <p>{product.description}</p>
       <p className="product-price">{product.price}</p>
       <p>Details</p>
       <ul>
-        {product.details.map((item, index) => <li className="product-details-list-item" key={index}>
-          {item.label}<br />
-          <span className="product-info">{item.value}</span>
-        </li>)}
+        {product.details.map((item, index) => (
+          <li className="product-details-list-item" key={index}>
+            {item.label}
+            <br />
+            <span className="product-info">{item.value}</span>
+          </li>
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default ProductDetails;
